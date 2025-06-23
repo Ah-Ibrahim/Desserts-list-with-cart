@@ -5,7 +5,7 @@
 }
 
 .item {
-    margin: 10.5rem 7rem;
+    /* margin: 10.5rem 7rem; */
     width: 250px;
 }
 
@@ -23,6 +23,7 @@
     border-radius: 0.5rem;
     display: block;
     max-width: 100%;
+    aspect-ratio: 1;
 }
 
 .item__desc {
@@ -57,6 +58,7 @@
     bottom: 0;
     transform: translate(-50%, 50%);
     width: 65%;
+    align-content: center;
 }
 
 .btn--main {
@@ -107,4 +109,11 @@
 
 .btn--icon:hover svg {
     fill: var(--red);
+}
+
+/* Selected State */
+
+.item__figure--selected {
+    border: 3px solid var(--red);
+    border-radius: 0.7rem;
 }

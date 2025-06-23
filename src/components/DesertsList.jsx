@@ -1,27 +1,15 @@
 import './DesertsList.css';
 import DesertsCard from './DesertsCard';
 
-const itemData = {
-	id: 1,
-	imgSrc: '/',
-	category: 'Waffle',
-	name: 'Waffle with Berries',
-	price: 6.5,
-	quantity: 0,
-};
-
-function DesertsList({ list }) {
-	// const items = list.map((item, index) => {
-	// 	<li key={index}>
-	// 		<DesertsCard />
-	// 	</li>;
-	// });
+function DesertsList({ Deserts, setDeserts }) {
+	const items = Deserts.map((item) => {
+		return <DesertsCard key={item.id} itemData={item} setDeserts={setDeserts} />;
+	});
 
 	return (
-		<div>
-			<h1>Deserts</h1>
-			{/* <ul>{items}</ul> */}
-			<DesertsCard itemData={itemData} />
+		<div className="list">
+			<h1 className="heading">Desserts</h1>
+			<div className="cards-container">{items}</div>
 		</div>
 	);
 }

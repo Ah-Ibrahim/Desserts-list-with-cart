@@ -1,13 +1,12 @@
+import Cart from './Cart';
 import './DesertsContainer.css';
 import DesertsList from './DesertsList';
 
-function DesertsContainer() {
+function DesertsContainer({ Deserts, setDeserts }) {
 	return (
 		<section className="container">
-			<DesertsList />
-			<aside>
-				<Cart />
-			</aside>
+			<DesertsList Deserts={Deserts} setDeserts={setDeserts} />
+			<Cart Deserts={Deserts} setDeserts={setDeserts} />
 		</section>
 	);
 }

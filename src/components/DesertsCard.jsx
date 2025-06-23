@@ -1,8 +1,5 @@
 import './DesertsCard.css';
 import addToCartImg from '../assets/images/icon-add-to-cart.svg';
-import iconIncrement from '../assets/images/icon-increment-quantity.svg';
-import iconDecrement from '../assets/images/icon-decrement-quantity.svg';
-import { useEffect } from 'react';
 
 function DesertsCardButton({ quantity, onClick, children }) {
 	if (!quantity) {
@@ -40,7 +37,7 @@ function DesertsCardButton({ quantity, onClick, children }) {
 // 	quantity: 0,
 // };
 
-function DesertsCard({ itemData }) {
+function DesertsCard({ itemData, setDeserts }) {
 	// console.log(itemData);
 	const itemId = itemData?.id ?? 0;
 	const itemImgSrc = itemData?.image?.desktop ?? {};

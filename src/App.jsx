@@ -1,22 +1,32 @@
 import './App.css';
 import DesertsContainer from './components/DesertsContainer';
 import DesertsCard from './components/DesertsCard';
-
-const itemData = {
-	id: 1,
-	image: {
-		desktop: '/images/image-waffle-desktop.jpg',
-	},
-	category: 'Waffle',
-	name: 'Waffle with Berries',
-	price: 6.5,
-	quantity: 0,
-};
+import DesertsData from './data.json';
+import { useState } from 'react';
 
 function App() {
+	// Preprocessing Data from json file
+	const [Deserts, setDeserts] = useState(
+		DesertsData.map((item, index) => {
+			return {
+				...item,
+				id: index,
+				image: {
+					desktop: item.image.desktop.replace('./assets', ''),
+					mobile: item.image.mobile.replace('./assets', ''),
+					thumbnail: item.image.thumbnail.replace('./assets', ''),
+					tablet: item.image.tablet.replace('./assets', ''),
+				},
+				// TODO: Remove Random Generation
+				quantity: Math.random() > 0.5 ? 1 : 0,
+			};
+		})
+	);
+	console.log(Deserts);
+
 	return (
 		<main className="app">
-			<DesertsCard itemData={itemData} />
+			<DesertsContainer Deserts={Deserts} setDeserts={setDeserts} />
 		</main>
 	);
 }

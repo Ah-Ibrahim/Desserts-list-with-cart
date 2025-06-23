@@ -1,0 +1,6 @@
+.container {
+    color: var(--rose-900);
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 385px);
+    gap: 1rem;
+}
