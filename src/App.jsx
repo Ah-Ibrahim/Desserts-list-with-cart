@@ -4,7 +4,9 @@ import DesertsCard from './components/DesertsCard';
 
 const itemData = {
 	id: 1,
-	imgSrc: '/images/image-waffle-desktop.jpg',
+	image: {
+		desktop: '/images/image-waffle-desktop.jpg',
+	},
 	category: 'Waffle',
 	name: 'Waffle with Berries',
 	price: 6.5,

@@ -4,8 +4,8 @@ import iconIncrement from '../assets/images/icon-increment-quantity.svg';
 import iconDecrement from '../assets/images/icon-decrement-quantity.svg';
 import { useEffect } from 'react';
 
-function DesertsCardButton({ count = 0, onClick, children }) {
-	if (!count) {
+function DesertsCardButton({ quantity, onClick, children }) {
+	if (!quantity) {
 		return (
 			<button className="btn btn--main" onClick={onClick}>
 				<img className="img" src={addToCartImg} /> {children}
@@ -15,11 +15,15 @@ function DesertsCardButton({ count = 0, onClick, children }) {
 		return (
 			<div className="btns-container">
 				<button className="btn btn--icon" aria-label="Decrement Button">
-					<img src={iconDecrement} alt="Decrement Icon" />
+					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2">
+						<path d="M0 .375h10v1.25H0V.375Z" />
+					</svg>
 				</button>
-				<div className="btns-container__count">{count}</div>
+				<div className="btns-container__quantity">{quantity}</div>
 				<button className="btn btn--icon" aria-label="Increment Button">
-					<img src={iconIncrement} alt="Increment Icon" />
+					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
+						<path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
+					</svg>
 				</button>
 			</div>
 		);
@@ -37,9 +41,9 @@ function DesertsCardButton({ count = 0, onClick, children }) {
 // };
 
 function DesertsCard({ itemData }) {
-	console.log(itemData);
+	// console.log(itemData);
 	const itemId = itemData?.id ?? 0;
-	const itemImgSrc = itemData?.imgSrc ?? {};
+	const itemImgSrc = itemData?.image?.desktop ?? {};
 	const itemCategory = itemData?.category ?? 'Unknown';
 	const itemName = itemData?.name ?? 'Unknown';
 	const itemPrice = itemData?.price ?? 0;
@@ -51,7 +55,9 @@ function DesertsCard({ itemData }) {
 		<div className="item">
 			<div className={`item__figure ${itemQuantity ? 'item__figure--selected' : ''}`}>
 				<img src={itemImgSrc} alt="Item Image" />
-				<DesertsCardButton onClick={handleClick}>Add to Cart</DesertsCardButton>
+				<DesertsCardButton onClick={handleClick} quantity={itemQuantity}>
+					Add to Cart
+				</DesertsCardButton>
 			</div>
 			<div className="item__desc">
 				<div className="category">{itemCategory}</div>
