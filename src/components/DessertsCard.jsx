@@ -1,7 +1,7 @@
-import './DesertsCard.css';
+import './DessertsCard.css';
 import addToCartImg from '../assets/images/icon-add-to-cart.svg';
 
-function DesertsCardButton({ quantity, onClick, children }) {
+function DessertsCardButton({ quantity, onClick, children }) {
 	if (!quantity) {
 		return (
 			<button className="btn btn--main" onClick={onClick}>
@@ -37,7 +37,7 @@ function DesertsCardButton({ quantity, onClick, children }) {
 // 	quantity: 0,
 // };
 
-function DesertsCard({ itemData, setDeserts }) {
+function DessertsCard({ itemData, setDesserts }) {
 	// console.log(itemData);
 	const itemId = itemData?.id ?? 0;
 	const itemImgSrc = itemData?.image?.desktop ?? {};
@@ -52,9 +52,9 @@ function DesertsCard({ itemData, setDeserts }) {
 		<div className="item">
 			<div className={`item__figure ${itemQuantity ? 'item__figure--selected' : ''}`}>
 				<img src={itemImgSrc} alt="Item Image" />
-				<DesertsCardButton onClick={handleClick} quantity={itemQuantity}>
+				<DessertsCardButton onClick={handleClick} quantity={itemQuantity}>
 					Add to Cart
-				</DesertsCardButton>
+				</DessertsCardButton>
 			</div>
 			<div className="item__desc">
 				<div className="category">{itemCategory}</div>
@@ -65,4 +65,4 @@ function DesertsCard({ itemData, setDeserts }) {
 	);
 }
 
-export default DesertsCard;
+export default DessertsCard;

@@ -1,13 +1,13 @@
 import './App.css';
-import DesertsContainer from './components/DesertsContainer';
-import DesertsCard from './components/DesertsCard';
-import DesertsData from './data.json';
+import DessertsContainer from './components/DessertsContainer';
+import DessertsCard from './components/DessertsCard';
+import DessertsData from './data.json';
 import { useState } from 'react';
 
 function App() {
 	// Preprocessing Data from json file
-	const [Deserts, setDeserts] = useState(
-		DesertsData.map((item, index) => {
+	const [Desserts, setDesserts] = useState(
+		DessertsData.map((item, index) => {
 			return {
 				...item,
 				id: index,
@@ -22,11 +22,11 @@ function App() {
 			};
 		})
 	);
-	console.log(Deserts);
+	console.log(Desserts);
 
 	return (
 		<main className="app">
-			<DesertsContainer Deserts={Deserts} setDeserts={setDeserts} />
+			<DessertsContainer Desserts={Desserts} setDesserts={setDesserts} />
 		</main>
 	);
 }

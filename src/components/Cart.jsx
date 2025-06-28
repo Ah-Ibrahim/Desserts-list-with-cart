@@ -1,8 +1,8 @@
 import './Cart.css';
 import EmptyCart from '../assets/images/illustration-empty-cart.svg';
 
-function Cart({ Deserts, setDeserts }) {
-	const selectedItems = Deserts.filter((item) => item.quantity > 0);
+function Cart({ Desserts, setDesserts }) {
+	const selectedItems = Desserts.filter((item) => item.quantity > 0);
 	const totalQuantity = selectedItems.reduce((accumulator, item) => accumulator + item.quantity, 0);
 
 	if (totalQuantity > 0) {
