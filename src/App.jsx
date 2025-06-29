@@ -5,10 +5,9 @@ import { useEffect, useState } from 'react';
 
 // Checking if data is saved in localStorage, if not found preprocess Data from json file
 function initilizeDesserts() {
-	const stored = JSON.parse(localStorage.getItem('Desserts'));
+	const storedQuantities = JSON.parse(localStorage.getItem('dessertsQuantities')) ?? {};
 
-	if (stored) return stored;
-	return DessertsData.map((item, index) => {
+	const desserts = DessertsData.map((item, index) => {
 		return {
 			...item,
 			id: index,
@@ -18,16 +17,26 @@ function initilizeDesserts() {
 				thumbnail: item.image.thumbnail.replace('./assets', ''),
 				tablet: item.image.tablet.replace('./assets', ''),
 			},
-			quantity: 0,
+			quantity: storedQuantities[index] ?? 0,
 		};
 	});
+
+	return desserts;
 }
 
 function App() {
 	const [desserts, setDesserts] = useState(initilizeDesserts);
 
 	useEffect(() => {
-		localStorage.setItem('Desserts', JSON.stringify(desserts));
+		const quantities = {};
+
+		desserts.forEach((item) => {
+			if (item.quantity > 0) {
+				quantities[item.id] = item.quantity;
+			}
+		});
+
+		localStorage.setItem('dessertsQuantities', JSON.stringify(quantities));
 	}, [desserts]);
 
 	return (
