@@ -17,8 +17,7 @@ function App() {
 					thumbnail: item.image.thumbnail.replace('./assets', ''),
 					tablet: item.image.tablet.replace('./assets', ''),
 				},
-				// TODO: Remove Random Generation
-				quantity: Math.random() > 0.5 ? 1 : 0,
+				quantity: 0,
 			};
 		})
 	);

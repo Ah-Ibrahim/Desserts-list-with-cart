@@ -3,7 +3,7 @@ import DessertsCard from './DessertsCard';
 
 function DessertsList({ Desserts, setDesserts }) {
 	const items = Desserts.map((item) => {
-		return <DessertsCard key={item.id} itemData={item} setDesserts={setDesserts} />;
+		return <DessertsCard key={item.id} itemData={item} Desserts={Desserts} setDesserts={setDesserts} />;
 	});
 
 	return (
