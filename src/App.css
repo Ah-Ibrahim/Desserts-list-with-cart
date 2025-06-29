@@ -1,5 +1,6 @@
 :root {
     --red: hsl(14, 86%, 42%);
+    --dark-red: hsl(14, 81%, 33%);
     --green: hsl(159, 69%, 38%);
     --white: #fff;
 
