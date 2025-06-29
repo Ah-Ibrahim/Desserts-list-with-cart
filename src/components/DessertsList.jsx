@@ -1,9 +1,9 @@
 import './DessertsList.css';
 import DessertsCard from './DessertsCard';
 
-function DessertsList({ Desserts, setDesserts }) {
-	const items = Desserts.map((item) => {
-		return <DessertsCard key={item.id} itemData={item} Desserts={Desserts} setDesserts={setDesserts} />;
+function DessertsList({ desserts, setDesserts }) {
+	const items = desserts.map((item) => {
+		return <DessertsCard key={item.id} itemData={item} desserts={desserts} setDesserts={setDesserts} />;
 	});
 
 	return (

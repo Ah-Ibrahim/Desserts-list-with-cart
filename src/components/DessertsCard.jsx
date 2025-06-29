@@ -40,7 +40,7 @@ function DessertsCardButton({ quantity, onClick, children }) {
 // 	quantity: 0,
 // };
 
-function DessertsCard({ itemData, Desserts, setDesserts }) {
+function DessertsCard({ itemData, desserts, setDesserts }) {
 	// console.log(itemData);
 	const itemId = itemData?.id ?? 0;
 	const itemImgSrc = itemData?.image?.desktop ?? {};
@@ -53,7 +53,7 @@ function DessertsCard({ itemData, Desserts, setDesserts }) {
 		const change = increment ? 1 : -1;
 
 		setDesserts(
-			Desserts.map((item) => {
+			desserts.map((item) => {
 				if (item.id === itemId) {
 					item.quantity = Math.max(0, item.quantity + change);
 				}

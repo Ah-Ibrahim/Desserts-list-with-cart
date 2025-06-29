@@ -1,8 +1,8 @@
 import './Cart.css';
 import EmptyCart from '../assets/images/illustration-empty-cart.svg';
 
-function Cart({ Desserts, setDesserts }) {
-	const selectedItems = Desserts.filter((item) => item.quantity > 0);
+function Cart({ desserts, setDesserts }) {
+	const selectedItems = desserts.filter((item) => item.quantity > 0);
 	const totalQuantity = selectedItems.reduce((accumulator, item) => accumulator + item.quantity, 0);
 	const totalPrice = selectedItems.reduce(
 		(accumulator, item) => accumulator + Number.parseFloat((item.price.toFixed(2) * item.quantity).toFixed(2)),
@@ -11,7 +11,7 @@ function Cart({ Desserts, setDesserts }) {
 
 	const handleClick = function (itemId) {
 		setDesserts(
-			Desserts.map((item) => {
+			desserts.map((item) => {
 				if (item.id === itemId) {
 					item.quantity = 0;
 				}

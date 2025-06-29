@@ -24,15 +24,15 @@ function initilizeDesserts() {
 }
 
 function App() {
-	const [Desserts, setDesserts] = useState(initilizeDesserts);
+	const [desserts, setDesserts] = useState(initilizeDesserts);
 
 	useEffect(() => {
-		localStorage.setItem('Desserts', JSON.stringify(Desserts));
-	}, [Desserts]);
+		localStorage.setItem('Desserts', JSON.stringify(desserts));
+	}, [desserts]);
 
 	return (
 		<main className="app">
-			<DessertsContainer Desserts={Desserts} setDesserts={setDesserts} />
+			<DessertsContainer desserts={desserts} setDesserts={setDesserts} />
 		</main>
 	);
 }

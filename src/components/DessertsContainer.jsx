@@ -2,11 +2,11 @@ import Cart from './Cart';
 import './DessertsContainer.css';
 import DessertsList from './DessertsList';
 
-function DessertsContainer({ Desserts, setDesserts }) {
+function DessertsContainer({ desserts, setDesserts }) {
 	return (
 		<section className="container">
-			<DessertsList Desserts={Desserts} setDesserts={setDesserts} />
-			<Cart Desserts={Desserts} setDesserts={setDesserts} />
+			<DessertsList desserts={desserts} setDesserts={setDesserts} />
+			<Cart desserts={desserts} setDesserts={setDesserts} />
 		</section>
 	);
 }
