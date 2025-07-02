@@ -1,7 +1,7 @@
 import './Cart.css';
 import EmptyCart from '../assets/images/illustration-empty-cart.svg';
 
-function Cart({ desserts, setDesserts }) {
+function Cart({ desserts, onUpdateDessert, onCartConfirm }) {
 	const selectedItems = desserts.filter((item) => item.quantity > 0);
 	const totalQuantity = selectedItems.reduce((accumulator, item) => accumulator + item.quantity, 0);
 	const totalPrice = selectedItems.reduce(
@@ -9,16 +9,12 @@ function Cart({ desserts, setDesserts }) {
 		0
 	);
 
-	const handleClick = function (itemId) {
-		setDesserts(
-			desserts.map((item) => {
-				if (item.id === itemId) {
-					item.quantity = 0;
-				}
+	const handleClickRemove = function (itemId) {
+		onUpdateDessert(itemId, 0);
+	};
 
-				return item;
-			})
-		);
+	const handleClickConfirmOrder = function () {
+		onCartConfirm();
 	};
 
 	const items = selectedItems.map((item) => {
@@ -35,7 +31,7 @@ function Cart({ desserts, setDesserts }) {
 				<button
 					className="btn btn--remove"
 					onClick={() => {
-						handleClick(item.id);
+						handleClickRemove(item.id);
 					}}>
 					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
 						<path d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z" />
@@ -77,7 +73,9 @@ function Cart({ desserts, setDesserts }) {
 							This is a <span className="highlight">carbon-neutral</span> delivery
 						</div>
 					</div>
-					<button className="btn btn--confirm">Confirm Order</button>
+					<button className="btn btn--confirm" onClick={handleClickConfirmOrder}>
+						Confirm Order
+					</button>
 				</div>
 			</aside>
 		);

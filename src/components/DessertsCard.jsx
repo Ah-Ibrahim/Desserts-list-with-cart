@@ -40,8 +40,7 @@ function DessertsCardButton({ quantity, onClick, children }) {
 // 	quantity: 0,
 // };
 
-function DessertsCard({ itemData, desserts, setDesserts }) {
-	// console.log(itemData);
+function DessertsCard({ itemData, onUpdateDessert }) {
 	const itemId = itemData?.id ?? 0;
 	const itemImgSrc = itemData?.image?.desktop ?? {};
 	const itemCategory = itemData?.category ?? 'Unknown';
@@ -52,15 +51,7 @@ function DessertsCard({ itemData, desserts, setDesserts }) {
 	const handleClick = function (increment) {
 		const change = increment ? 1 : -1;
 
-		setDesserts(
-			desserts.map((item) => {
-				if (item.id === itemId) {
-					item.quantity = Math.max(0, item.quantity + change);
-				}
-
-				return item;
-			})
-		);
+		onUpdateDessert(itemId, itemQuantity + change);
 	};
 
 	return (

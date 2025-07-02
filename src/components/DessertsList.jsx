@@ -1,9 +1,9 @@
 import './DessertsList.css';
 import DessertsCard from './DessertsCard';
 
-function DessertsList({ desserts, setDesserts }) {
+function DessertsList({ desserts, onUpdateDessert }) {
 	const items = desserts.map((item) => {
-		return <DessertsCard key={item.id} itemData={item} desserts={desserts} setDesserts={setDesserts} />;
+		return <DessertsCard key={item.id} itemData={item} desserts={desserts} onUpdateDessert={onUpdateDessert} />;
 	});
 
 	return (

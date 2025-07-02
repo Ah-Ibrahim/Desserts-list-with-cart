@@ -23,7 +23,7 @@ function initilizeDesserts() {
 
 	return desserts;
 }
-
+// TODO: Make images alt text dynamic
 function App() {
 	const [desserts, setDesserts] = useState(initilizeDesserts);
 
@@ -39,9 +39,35 @@ function App() {
 		localStorage.setItem('dessertsQuantities', JSON.stringify(quantities));
 	}, [desserts]);
 
+	const updateDessertQuantity = function (id, quantity) {
+		setDesserts(
+			desserts.map((item) => {
+				if (item.id === id) {
+					item.quantity = Math.max(0, quantity);
+				}
+
+				return item;
+			})
+		);
+	};
+
+	const clearDessertsQuantity = function () {
+		setDesserts(
+			desserts.map((item) => {
+				item.quantity = 0;
+
+				return item;
+			})
+		);
+	};
+
 	return (
 		<main className="app">
-			<DessertsContainer desserts={desserts} setDesserts={setDesserts} />
+			<DessertsContainer
+				desserts={desserts}
+				onUpdateDessert={updateDessertQuantity}
+				onClearDesserts={clearDessertsQuantity}
+			/>
 		</main>
 	);
 }

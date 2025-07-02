@@ -1,0 +1,101 @@
+.modal {
+    --modal-bgc: var(--white);
+    --modal-br: 12px;
+    --modal-padding: 2.5rem;
+
+    --modal-heading-size: 2.5rem;
+    --modal-text-color: var(--rose-500);
+
+    --modal-order-bgc: var(--rose-50);
+    --modal-order-padding: 0.5rem 1.5rem;
+}
+
+.overlay-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.532);
+    z-index: 1;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 41%;
+    cursor: pointer;
+}
+
+.modal {
+    background-color: var(--modal-bgc);
+    border-radius: var(--modal-br);
+    padding: var(--modal-padding);
+    cursor: initial;
+}
+
+.modal__heading {
+    margin: 1rem 0 0.5rem;
+    font-size: var(--modal-heading-size);
+}
+
+.modal__text {
+    color: var(--modal-text-color);
+    margin-bottom: 2rem;
+}
+
+.modal__order {
+    background-color: var(--modal-order-bgc);
+    padding: var(--modal-order-padding);
+    border-radius: 10px;
+}
+
+.order-item {
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    border-bottom: 1px solid var(--rose-100);
+}
+
+.order-item__img {
+    width: 47px;
+    aspect-ratio: 1 / 1;
+}
+
+.order-item__info {
+    margin-inline-start: 1rem;
+    display: grid;
+    grid-template-columns: min-content max-content;
+    gap: 0.5rem 1rem;
+}
+
+.order-item__info .name {
+    grid-column: span 2;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.order-item__info :is(.quantity, .price) {
+    font-size: 0.9rem;
+}
+
+
+.order-item__info .quantity {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.order-item__info .price {
+    color: var(--rose-500)
+}
+
+.order-item__item-total-price {
+    margin-inline-start: auto;
+    font-weight: 600;
+}
+
+.modal__order .order {
+    padding-top: 2.1rem;
+    padding-bottom: 1rem;
+}
+
+.modal__order {
+    margin-bottom: 0.8rem;
+}

@@ -128,19 +128,3 @@
 .card .highlight {
     font-weight: 500;
 }
-
-.btn--confirm {
-    margin-top: 1.25rem;
-    background-color: var(--red);
-    color: var(--white);
-    padding: 1.15em;
-    width: 100%;
-    font-size: 0.95rem;
-    border-radius: 2rem;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-}
-
-.btn--confirm:hover {
-    background-color: var(--dark-red);
-}
