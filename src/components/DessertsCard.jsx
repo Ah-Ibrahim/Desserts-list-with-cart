@@ -1,5 +1,7 @@
 import './DessertsCard.css';
 import addToCartImg from '../assets/images/icon-add-to-cart.svg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function DessertsCardButton({ quantity, onClick, children }) {
 	const handleClickIncrement = () => onClick(true);
@@ -30,16 +32,6 @@ function DessertsCardButton({ quantity, onClick, children }) {
 	}
 }
 
-// NOTE: Item Data
-// const itemData = {
-// 	id: 0,
-//  imgSrc : '',
-// 	category: '',
-// 	name: '',
-// 	price: 0,
-// 	quantity: 0,
-// };
-
 function DessertsCard({ itemData, onUpdateDessert }) {
 	const itemId = itemData?.id ?? 0;
 	const itemImgSrc = itemData?.image?.desktop ?? {};
@@ -57,7 +49,8 @@ function DessertsCard({ itemData, onUpdateDessert }) {
 	return (
 		<div className="item">
 			<div className={`item__figure ${itemQuantity ? 'item__figure--selected' : ''}`}>
-				<img src={itemImgSrc} alt="Item Image" />
+				{/* <img src={itemImgSrc} alt={itemName} loading="lazy" /> */}
+				<LazyLoadImage src={itemImgSrc} alt={itemName} effect="blur" />
 				<DessertsCardButton onClick={handleClick} quantity={itemQuantity}>
 					Add to Cart
 				</DessertsCardButton>

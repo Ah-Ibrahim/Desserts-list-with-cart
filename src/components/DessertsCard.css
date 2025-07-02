@@ -12,6 +12,10 @@
     position: relative;
 }
 
+.lazy-load-image-background {
+    display: block !important;
+}
+
 .item__figure img {
     border-radius: 0.5rem;
     display: block;

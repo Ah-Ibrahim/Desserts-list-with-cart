@@ -23,7 +23,7 @@ function initilizeDesserts() {
 
 	return desserts;
 }
-// TODO: Make images alt text dynamic
+
 function App() {
 	const [desserts, setDesserts] = useState(initilizeDesserts);
 

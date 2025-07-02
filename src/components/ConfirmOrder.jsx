@@ -1,6 +1,8 @@
 import './ConfirmOrder.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-function ConfirmOrder({ onClick, desserts, onNewOrder }) {
+function ConfirmOrder({ desserts, onNewOrder }) {
 	const selectedItems = desserts.filter((item) => item.quantity > 0);
 	const totalPrice = selectedItems.reduce(
 		(accumulator, item) => accumulator + Number.parseFloat((item.price.toFixed(2) * item.quantity).toFixed(2)),
@@ -10,7 +12,7 @@ function ConfirmOrder({ onClick, desserts, onNewOrder }) {
 	const items = selectedItems.map((item, index) => {
 		return (
 			<div key={index} className="order-item">
-				<img src={item.image.thumbnail} alt={item.name} className="order-item__img" />
+				<LazyLoadImage src={item.image.thumbnail} alt={item.name} className="order-item__img" effect="blur" />
 				<div className="order-item__info">
 					<div className="name">{item.name}</div>
 					<div className="quantity">{item.quantity}x</div>
