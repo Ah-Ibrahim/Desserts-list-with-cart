@@ -99,3 +99,21 @@
 .modal__order {
     margin-bottom: 0.8rem;
 }
+
+@media (width < 700px) {
+    .overlay-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal__heading {
+        line-height: 1.2;
+    }
+
+    .order-item {
+        padding: 1.25rem 0;
+    }
+
+    .order-item .lazy-load-image-background {
+        aspect-ratio: 1;
+    }
+}

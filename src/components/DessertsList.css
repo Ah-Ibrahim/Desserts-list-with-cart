@@ -5,7 +5,7 @@
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
     gap: 2rem 0.75rem;
 }
 
@@ -13,4 +13,10 @@
     outline: none;
     cursor: pointer;
     border: none;
+}
+
+@media (width < 700px) {
+    .list .heading {
+        margin-bottom: 1.75rem;
+    }
 }
