@@ -12,10 +12,10 @@ function initilizeDesserts() {
 			...item,
 			id: index,
 			image: {
-				desktop: item.image.desktop.replace('./assets', ''),
-				mobile: item.image.mobile.replace('./assets', ''),
-				thumbnail: item.image.thumbnail.replace('./assets', ''),
-				tablet: item.image.tablet.replace('./assets', ''),
+				desktop: item.image.desktop.replace('/assets', ''),
+				mobile: item.image.mobile.replace('/assets', ''),
+				thumbnail: item.image.thumbnail.replace('/assets', ''),
+				tablet: item.image.tablet.replace('/assets', ''),
 			},
 			quantity: storedQuantities[index] ?? 0,
 		};
