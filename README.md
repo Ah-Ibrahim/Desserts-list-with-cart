@@ -11,14 +11,14 @@ _A responsive dessert ordering website with a smooth shopping experience and per
 ## 📋 Table of Contents
 
 -   [About](#-about)
--   [Tech Stack](#-tech-stack)
+-   [Tech Stack](#%EF%B8%8F-tech-stack)
 -   [Features](#-features)
--   [Getting Started](#-getting-started)
--   [Project Structure](#-project-structure)
+-   [Getting Started](#%EF%B8%8F-tech-stack)
+-   [Project Structure](#%EF%B8%8F-tech-stack)
 -   [Usage](#-usage)
 -   [License](#-license)
 -   [Credits](#-credits)
--   [Authors](#-authors)
+-   [Authors](#%EF%B8%8F-authors)
 
 ---
 
@@ -59,7 +59,7 @@ Wanna run this locally? Follow these steps:
 
 1. Clone the repo
 
-`git clone https://github.com/Ah-Ibrahim/Deserts-list-with-cart.git`
+`git clone https://github.com/Ah-Ibrahim/Deserts-list-with-cart.git`\
 `cd your-repo`
 
 2. Install dependencies
