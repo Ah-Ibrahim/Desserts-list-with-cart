@@ -9,7 +9,7 @@ function DessertsCardButton({ quantity, onClick, children }) {
 
 	if (!quantity) {
 		return (
-			<button className="btn btn--main" onClick={handleClickIncrement}>
+			<button className="btn btn--main" onClick={handleClickIncrement} aria-label="Add to cart">
 				<img className="img" src={addToCartImg} /> {children}
 			</button>
 		);
@@ -22,7 +22,11 @@ function DessertsCardButton({ quantity, onClick, children }) {
 					</svg>
 				</button>
 				<div className="btns-container__quantity">{quantity}</div>
-				<button className="btn btn--icon" aria-label="Increment Button" onClick={handleClickIncrement}>
+				<button
+					className="btn btn--icon"
+					aria-label="Increment Button"
+					onClick={handleClickIncrement}
+					aria-valuetext="increase quantity button">
 					<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10">
 						<path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" />
 					</svg>
@@ -49,7 +53,6 @@ function DessertsCard({ itemData, onUpdateDessert }) {
 	return (
 		<div className="item">
 			<div className={`item__figure ${itemQuantity ? 'item__figure--selected' : ''}`}>
-				{/* <img src={itemImgSrc} alt={itemName} loading="lazy" /> */}
 				<LazyLoadImage src={itemImgSrc} alt={itemName} effect="blur" />
 				<DessertsCardButton onClick={handleClick} quantity={itemQuantity}>
 					Add to Cart
