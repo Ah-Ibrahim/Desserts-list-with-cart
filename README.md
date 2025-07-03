@@ -99,7 +99,7 @@ your-project/
 
 3. Click "Confirm Order" to view a summary in a modal.
 
-4. Use ESC key or close button to dismiss the modal.
+4. Use ESC key or click outside modal to dismiss the modal.
 
 5. Orders and cart data are saved automatically for future visits.
 
