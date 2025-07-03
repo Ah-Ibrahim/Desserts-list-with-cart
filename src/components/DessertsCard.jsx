@@ -9,8 +9,8 @@ function DessertsCardButton({ quantity, onClick, children }) {
 
 	if (!quantity) {
 		return (
-			<button className="btn btn--main" onClick={handleClickIncrement} aria-label="Add to cart">
-				<img className="img" src={addToCartImg} /> {children}
+			<button className="btn btn--main" onClick={handleClickIncrement} aria-label="Add to cart button">
+				<img className="img" src={addToCartImg} alt="Add to cart" /> {children}
 			</button>
 		);
 	} else {
