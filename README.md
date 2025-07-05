@@ -4,7 +4,7 @@ _A responsive dessert ordering website with a smooth shopping experience and per
 
 ![Project Screenshot](./design/desktop-design-selected.jpg)
 
-[Live Preview](https://ah-ibrahim.github.io/Deserts-list-with-cart)
+[Live Preview](https://ah-ibrahim.github.io/Desserts-list-with-cart)
 
 ---
 
