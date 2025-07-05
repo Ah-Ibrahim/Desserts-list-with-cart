@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ah-ibrahim.github.io/Deserts-list-with-cart",
+  "homepage": "https://ah-ibrahim.github.io/Desserts-list-with-cart",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
