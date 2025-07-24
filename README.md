@@ -13,7 +13,7 @@ _A responsive dessert ordering website with a smooth shopping experience and per
 -   [About](#-about)
 -   [Tech Stack](#%EF%B8%8F-tech-stack)
 -   [Features](#-features)
--   [Getting Started](#-getting-started)
+-   [Getting Started](#%EF%B8%8F-getting-started)
 -   [Project Structure](#project-structure)
 -   [Usage](#-usage)
 -   [License](#-license)
